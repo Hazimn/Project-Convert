@@ -8,6 +8,7 @@ const form = document.querySelector("form")
 const amount = document.getElementById("amount")
 const currency = document.getElementById("currency")
 const footer = document.querySelector("main footer")
+const description = document.getElementById("description")
 
 // Manipulando o input amount para receber somente Números.
 amount.addEventListener("input", () => {
@@ -33,6 +34,7 @@ form.onsubmit = (Event) => {
 // Função para converter a moeda.
 function convertCurrency(amount, price, symbol) {
     try {
+        description.textContent = `${symbol} 1= ${price}`
         // Aplica a classe que exibe o footer para mostrar o resultado.
         footer.classList.add("show-result")
     } catch (error) {
